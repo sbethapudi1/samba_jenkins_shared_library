@@ -13,6 +13,6 @@ def call(Map config=[:], Closure body) {
          //bat "npm build"
             
         }
-        body()
+       
     }
 }
