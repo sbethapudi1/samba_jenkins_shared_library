@@ -1,27 +1,28 @@
 def call (String makeParams, String projectname, String buildir)
 {
-dir(buildir)
-{
+node {
+	dir(buildir)
+	{
 
-def st1 = ["WESUTILS"]
+	def st1 = ["WESUTILS"]
 
-println(st1.contains (projectname))
-version(projectname)
+	println(st1.contains (projectname))
+	version(projectname)
 
-if(  projectname == "WESUTILS")
-{
-	bat '''
+	if(  projectname == "WESUTILS")
+	{
+		bat '''
 
-    msbuild  /t:clean /property:Configuration=Release 
-	
-	'''
+		msbuild  /t:clean /property:Configuration=Release 
+		
+		'''
 
 
-	bat '''
+		bat '''
 
-	msbuild  /t:build /property:Configuration=Release  ${makeParams}
-	'''
+		msbuild  /t:build /property:Configuration=Release  ${makeParams}
+		'''
+	  }
+	}
   }
-}
-
 }
