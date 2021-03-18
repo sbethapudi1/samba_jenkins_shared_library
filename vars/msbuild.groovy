@@ -8,7 +8,7 @@ def st1 = ["WESUTILS"]
 println(st1.contains (projectname))
 version(projectname)
 
-if(  project name == "WESUTILS")
+if(  projectname == "WESUTILS")
 {
 	bat '''
 
