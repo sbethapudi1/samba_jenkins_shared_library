@@ -8,9 +8,9 @@ def call(Map config=[:], Closure body) {
             bat "npm test"
         }
         stage("Deploy") {
-            if (config.deploy) {
+            
                 bat "npm publish"
-            }
+            
         }
         body()
     }
