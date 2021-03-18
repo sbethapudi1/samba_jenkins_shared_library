@@ -16,7 +16,7 @@ def call(String projectname)
 		echo "Now Sourcing PACKAGE_RELEASE number"
 		echo "Package release version before increnting is PACKAGE_RELEASE"
 		varInca'expr \$PACKAGE RELEASE + 01
-		echo "Package release version is \SvarInc"
+		echo "Package release version is \$varInc"
 		sed -i "s\\(PACKAGE_RELEASE-11). */\\1\$varinc/" /root/version_enabler.txt;
 		sed -i "s\\(APKG_RELEASE=\).*/\\1\$varinc/" \${WORKSPACE}/DCA ENABLER/INFO ;
 		sed -i "s/(PKG_RELEASE=\\).*/\\1\$varinc/" \${WORKSPACE}/DCA_ENABLER_PACKAGES/INFO ;
