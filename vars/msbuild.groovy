@@ -23,7 +23,7 @@ node {
 
 		bat """
 		
-		msbuild  /t:build /property:Configuration=Release  %makeParams%
+		msbuild  /t:build /property:Configuration=Release  ${makeParams}
 		
 		"""
 	  }
