@@ -11,17 +11,17 @@ node {
 
 	if(  projectname == "WESUTILS")
 	{
-		bat '''
+		bat """
 
 		msbuild  /t:clean /property:Configuration=Release 
 		
-		'''
+		"""
 
 
-		bat '''
+		bat """
 
-		msbuild  /t:build /property:Configuration=Release  ${makeParams}
-		'''
+		msbuild  /t:build /property:Configuration=Release  %makeParams%
+		"""
 	  }
 	}
   }
