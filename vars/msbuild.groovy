@@ -1,4 +1,4 @@
-def call (string makeParams, string projectname, string buildir)
+def call (String makeParams, String projectname, String buildir)
 {
 dir(buildir)
 {
