@@ -9,7 +9,7 @@ def call(Map config=[:], Closure body) {
         }
         stage("Deploy") {
             
-                bat "npm publish"
+                bat "npm build"
             
         }
         body()
