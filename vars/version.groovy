@@ -18,8 +18,8 @@ def call(String projectname)
 		varInca'expr \$PACKAGE RELEASE + 01
 		echo "Package release version is \$varInc"
 		sed -i "s\\(PACKAGE_RELEASE-11). */\\1\$varinc/" /root/version_enabler.txt;
-		sed -i "s\\(APKG_RELEASE=\).*/\\1\$varinc/" \${WORKSPACE}/DCA_ENABLER/INFO ;
-		sed -i "s/(PKG_RELEASE=\\).*/\\1\$varinc/" \${WORKSPACE}/DCA_ENABLER_PACKAGES/INFO ;
+		sed -i "s\\(APKG_RELEASE=\\).*/\\1\$varinc/" \${WORKSPACE}/DCA_ENABLER/INFO ;
+		sed -i "s/(PKG_RELEASE=\\).*/\\1\$varinc/" \${WORKSPACE}/DCA_ENABLER_PACKAGES/INFO;
 		echo "\$varInc"> /root/env_version.txt
 		fi
 	"""
