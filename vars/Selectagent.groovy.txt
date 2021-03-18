@@ -1,0 +1,16 @@
+import groovy.yaml.Yamlslurper
+def call
+{
+def yamlFile = new File("jenkins.yml")
+yamlFile.withReader { reader ->
+def yaml = new Yamlslurper().parse(reader)
+if (yaml.buildEnvironment.agentype == "VM")
+{
+mcsgcipipelinenew()
+}
+else
+{
+mcsgdockercipipeline()
+}
+}
+}

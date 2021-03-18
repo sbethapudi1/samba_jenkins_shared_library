@@ -1,0 +1,15 @@
+def call (string projectname)
+{
+if( projectname == "DHC1.5")
+{
+sh '''
+#!/bin/sh
+cd bremen_build
+make run-unittest
+rm -rf squashfs-root
+'''
+else
+{
+println ("No other project to unittest")
+}
+}
