@@ -1,4 +1,4 @@
-def call(String buildtool, String makeParams, string project name, String buildir)
+def call(String buildtool, String makeParams, String projectname, String buildir)
 //script{ datas = readyaml (file: 'jenkins.yaml') )
 if ( buildtool == "make" ) {
 //previously ($datas.compile.makeParams), ${datas.projectname}, $datas.compile buildir)), projectname doesnt exist in yaml
