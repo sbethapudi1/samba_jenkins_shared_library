@@ -16,7 +16,7 @@ node {
 		
 		bat """
         echo %makeParams%
-		msbuild  /t:clean /property:Configuration=Release  %makeParams%
+		msbuild  /t:clean /property:Configuration=Release  ${makeParams}
 		
 		"""
 
