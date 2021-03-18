@@ -4,9 +4,7 @@ def call(Map config=[:], Closure body) {
         stage("Install") {
             bat "npm install"
         }
-        stage("Test") {
-            bat "npm test"
-        }
+        
         
         body()
     }
