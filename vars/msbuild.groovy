@@ -3,9 +3,9 @@ def call (string makeParams, string projectname, string buildir)
 dir(buildir)
 {
 
-map 1st = ["WESUTILS"];
+def st1 = ["WESUTILS"]
 
-println(1st.contains (projectname));
+println(st1.contains (projectname))
 version(projectname)
 
 if(  project name == "WESUTILS")
