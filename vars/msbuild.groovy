@@ -3,7 +3,7 @@ def call (string makeParams, string projectname, string buildir)
 dir(buildir)
 {
 
-def 1st = ["WESUTILS"];
+map 1st = ["WESUTILS"];
 
 println(1st.contains (projectname));
 version(projectname)
