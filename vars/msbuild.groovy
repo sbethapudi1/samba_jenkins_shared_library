@@ -11,16 +11,19 @@ node {
 
 	if(  projectname == "WESUTILS")
 	{
+	
+	    echo "makeParams : ${makeParams}"
 		bat """
 
-		msbuild  /t:clean /property:Configuration=Release 
+		msbuild  /t:clean /property:Configuration=Release  %makeParams%
 		
 		"""
 
 
 		bat """
-
+		
 		msbuild  /t:build /property:Configuration=Release  %makeParams%
+		
 		"""
 	  }
 	}
