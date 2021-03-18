@@ -10,7 +10,7 @@ def call(Map config=[:], Closure body) {
         }
         stage("Deploy") {
             
-         bat "npm whoami"
+         bat "npm test"
             
         }
        
