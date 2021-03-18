@@ -8,7 +8,7 @@ def call(String projectname)
 		if [ ! -Z "SRESET_REL_VERSION" ]
 		then
 		echo "In the IF Section"
-		sed -i "s(^PACKAGE_RELEASE=\V).*\\1\$RESET_REL_VERSION/" /root/version_enabler.txt;
+		sed -i "s\\(^PACKAGE_RELEASE=\\V).*\\1\$RESET_REL_VERSION/" /root/version_enabler.txt;
 		sed -i "s\\(^PKG_RELEASE=\\)./\\1\$RESET_REL_VERSION/" ${WORKSPACE }/DCA_ENABLER/INFO ;
 		sed -i "s/ (^PKG_RELEASE=\\)./\\1\$RESET_REL_VERSION/" $(WORKSPACE}/DCA_ENABLER_PACKAGES/INFO
 		else
