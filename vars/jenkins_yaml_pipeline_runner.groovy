@@ -6,7 +6,7 @@ def call(final String yamlFile) {
 
 		Map pipelineConfig = null
 		if (SystemUtils.IS_OS_WINDOWS){
-			pipelineConfig =readYaml(file: "${env.WORKSPACE}\${yamlFile}")
+			pipelineConfig =readYaml(file: "${env.WORKSPACE}\\${yamlFile}")
 		}
 		else if (SystemUtils.IS_OS_MAC){
 			pipelineConfig =readYaml(file: "${env.WORKSPACE}/${yamlFile}")
