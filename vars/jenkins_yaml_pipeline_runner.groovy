@@ -1,4 +1,4 @@
-def call(final Strig yamlFile)
+def call(final String yamlFile)
 {
 
   Map pipelineConfig = readYaml(file: "${WORKSPACE}/${yamlFile}")
