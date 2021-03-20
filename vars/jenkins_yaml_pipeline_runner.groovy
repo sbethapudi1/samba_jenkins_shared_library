@@ -1,9 +1,8 @@
-def call(final body)
+def call(final Strig yamlFile)
 {
 
-  def config = [:]
-  body.delegate = config
+  Map pipelineConfig = readYaml(file: "${WORKSPACE}/${yamlFile}")
+  echo " parsed yaml : "+pipelineConfig
   
-  body()
 
 }
