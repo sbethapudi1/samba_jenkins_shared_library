@@ -22,4 +22,7 @@ def call(final String yamlFile) {
 		echo " parsed yaml : "+pipelineConfig
 	}  // end of node
 	
+	// calling pipeline runner.
+	
+	
 }  // end of def 

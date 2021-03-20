@@ -1,0 +1,38 @@
+serviceName: "DCA Enaber"
+buildEnvironment
+agentype: "docker
+sourcecode:
+gitrepo: "https://git.cpg.dell.com/scm/wda/dca_enabler.git" Mandatory
+gitbranch: "release/MS_3.2" Mandatory
+gitrepo: "https://git.cpg.dell.com/scm/wda/dca_enabler.git" Mandatory
+gitbranch: "release/MS_3.2" Mandatory
+submodule: true anadtory Boolean true false
+compile: "C:/Program Files (x86)/Microsoft VisualStudio/2017/Enterprise/MSBuild/15.0/Bin/MsBuild.exe" HelloWorld.sln /t:rebuild /property:Configuration=Release
+buildtool: "make" tmake, make, msbuild, maven, gradle
+buildir: "/var/lib/jenkins/workspace/MCSGcicdpipeline_feature_testgen"
+#buildir: "bremen build"
+#buildstep: "" # Build steps like: make env, make all etc.
+#makeParams: "mode-dev build number=$(BUILD_NUMBER) cert-DHC_selfsign" #
+RESET REL VERSION:
+TARGET PROJECT: # for DCA
+codesigning
+signing: "YES" # YES NO
+signtype: "OpenSSL" # Open 55L or Windows
+signingcert: "Latestsign" uThis parameter is for only OpenSSL signing certificates: DHC_selfsign, Oldcert sign, selfsign_ws, Testsign, Latestsign
+filetobesigned: "/root/LASSEN_WDA/ngen wa/Deployment/ubuntu/PACKAGE/" deb" This parameter is for only OpenSSL signing.
+# File/files in directory to be signed
+dirforsignedfiles: "/root/LASSEN WDA/ngen_wda" This parameter is for only openssl signing
+#unittest:
+#testdir: "" #specify the base directory to execute unit test
+#test commands: "" #Command like make run-unittest
+#postur command: # specify post Unit test commands if any
+buildvalidationtest:
+ BVT: "0" # Manadtory Yes No
+skylineupload:
+filestobeuploaded: "bremen_build/RELEASE/--
+excludefiles:
+postbuildactivity:
+archiveartifact:
+email ID:
+
+ 
