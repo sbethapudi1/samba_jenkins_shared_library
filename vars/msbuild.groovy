@@ -12,15 +12,8 @@ def call (String makeParams, String projectname, String buildir) {
 				echo "makeParams : ${makeParams}"
 
 				bat """
-			        echo %makeParams%
-					msbuild  ${makeParams}
 		
-		         """
-
-
-				bat """
-		
-				msbuild  ${makeParams}
+				 ${makeParams}
 				
 				"""
 			}
