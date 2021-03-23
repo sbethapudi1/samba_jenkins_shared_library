@@ -13,7 +13,7 @@ Map pipelineDefinition = null
       echo 'Loading pipeline definition'
       Yaml parser = new Yaml()
       pipelineDefinition = parser.load(new File(pwd() + '/pipeline.yaml').text)
-    }
+   
 	
 	
 
@@ -27,7 +27,7 @@ Map pipelineDefinition = null
         new MsbuilPipeline(pipelineDefinition).executePipeline()
     }
 
-  }
-
-}
+    } // end of stage
+   }  // end of node
+}   // end of run
 
