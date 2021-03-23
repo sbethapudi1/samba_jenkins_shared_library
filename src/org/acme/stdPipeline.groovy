@@ -4,13 +4,15 @@ import org.yaml.snakeyaml.Yaml
 
 def execute() {
 
+Map pipelineDefinition = null
+
   node {
 
     stage('Initialize') {
       checkout scm
       echo 'Loading pipeline definition'
       Yaml parser = new Yaml()
-      Map pipelineDefinition = parser.load(new File(pwd() + '/pipeline.yaml').text)
+      pipelineDefinition = parser.load(new File(pwd() + '/pipeline.yaml').text)
     }
 
     switch(pipelineDefinition.pipelineType) {
@@ -26,3 +28,4 @@ def execute() {
   }
 
 }
+
