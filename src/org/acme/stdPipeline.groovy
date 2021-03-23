@@ -18,9 +18,6 @@ def execute() {
       case 'python':
         // Instantiate and execute a Python pipeline
         new pythonPipeline(pipelineDefinition).executePipeline()
-      case 'nodejs':
-        // Instantiate and execute a NodeJS pipeline
-        new NodeJSPipeline(pipelineDefinition).executePipeline()
       case 'msbuild':
         // Instantiate and execute a Msbuild pipeline
         new MsbuilPipeline(pipelineDefinition).executePipeline()
