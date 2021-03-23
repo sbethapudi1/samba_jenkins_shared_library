@@ -19,6 +19,9 @@ def execute() {
       case 'nodejs':
         // Instantiate and execute a NodeJS pipeline
         new nodeJSPipeline(pipelineDefinition).executePipeline()
+      case 'msbuild':
+        // Instantiate and execute a Msbuild pipeline
+        new MsbuildPipeline(pipelineDefinition).executePipeline()
     }
 
   }
