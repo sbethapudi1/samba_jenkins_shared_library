@@ -1,7 +1,7 @@
 #!/usr/bin/groovy
 package org.acme;
 
-nodeJSPipeline(pipelineDefinition) {
+NodeJSPipeline(pipelineDefinition) {
   // Create a globally accessible variable that makes
   // the YAML pipeline definition available to all scripts
   pd = pipelineDefinition

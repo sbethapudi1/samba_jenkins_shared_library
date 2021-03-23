@@ -1,5 +1,6 @@
 #!/bin/groovy
 package org.acme;
+import org.yaml.snakeyaml.Yaml
 
 def execute() {
 
@@ -18,10 +19,10 @@ def execute() {
         new pythonPipeline(pipelineDefinition).executePipeline()
       case 'nodejs':
         // Instantiate and execute a NodeJS pipeline
-        new nodeJSPipeline(pipelineDefinition).executePipeline()
+        new NodeJSPipeline(pipelineDefinition).executePipeline()
       case 'msbuild':
         // Instantiate and execute a Msbuild pipeline
-        new MsbuildPipeline(pipelineDefinition).executePipeline()
+        new MsbuilPipeline(pipelineDefinition).executePipeline()
     }
 
   }
