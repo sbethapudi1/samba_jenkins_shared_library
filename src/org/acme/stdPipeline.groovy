@@ -15,7 +15,7 @@ Map pipelineDefinition = null
       pipelineDefinition = parser.load(new File(pwd() + '/pipeline.yaml').text)
    
 	
-	
+	echo "parsed yaml:\\n " + pipelineDefinition
 
     switch(pipelineDefinition.pipelineType) {
 
