@@ -8,10 +8,7 @@ def call() {
          def p = pipelineConfig()
 
         stage('Prerequistes'){
-            serviceName = sh (
-                    script: "echo ${p.SERVICE_NAME}|cut -d '-' -f 1",
-                    returnStdout: true
-                ).trim()
+            echo "Prerequistes ${p.SERVICE_NAME}"
         }
 
         stage('Build & Test') {
@@ -20,10 +17,7 @@ def call() {
         }
 
         stage ('Push Docker Image') {
-            docker.withRegistry('https://registry-opstree.com', 'dockerhub') {
-                sh "docker build -t opstree/${p.SERVICE_NAME}:${BUILD_NUMBER} ."
-                sh "docker push opstree/${p.SERVICE_NAME}:${BUILD_NUMBER}"
-            }
+            echo "Push Docker Image"
         }
 
         stage ('Deploy') {
