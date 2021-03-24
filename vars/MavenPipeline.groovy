@@ -12,8 +12,8 @@ def call() {
         }
 
         stage('Build & Test') {
-                sh "mvn --version"
-                sh "mvn -Ddb_port=${p.DB_PORT} -Dredis_port=${p.REDIS_PORT} clean install"
+                bat "mvn --version"
+                bat "mvn -Ddb_port=${p.DB_PORT} -Dredis_port=${p.REDIS_PORT} clean install"
         }
 
         stage ('Push Docker Image') {
