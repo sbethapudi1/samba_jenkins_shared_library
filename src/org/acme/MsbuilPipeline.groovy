@@ -10,19 +10,7 @@ MsbuildPipeline(Map pipelineDefinition) {
 }
 
 def executePipeline() {
-  node {
-    if (runTests) {
-      stage('Run Tests') {
-        sh pd.testCommand
-      }
-    }
-
-    if (deployUponTestSuccess) {
-      stage('Deploy') {
-        sh "path/to/a/deploy/bash/script.sh ${pd.deploymentEnvironment}"
-      }
-    }
-  }
+  
 }
 
 return this
