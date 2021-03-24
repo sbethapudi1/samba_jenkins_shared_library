@@ -26,7 +26,7 @@ Map pipelineDefinition = null
         new pythonPipeline(pipelineDefinition).executePipeline()
       case 'msbuild':
         // Instantiate and execute a Msbuild pipeline
-        new MsbuilPipeline(pipelineDefinition).executePipeline()
+        //new MsbuilPipeline(pipelineDefinition).executePipeline()
     }
 
     } // end of stage
