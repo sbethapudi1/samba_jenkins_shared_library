@@ -11,7 +11,7 @@ Map pipelineDefinition = null
     stage('Initialize') {
       checkout scm
       echo 'Loading pipeline definition'
-      Yaml parser = new Yaml()
+      //Yaml parser = new Yaml()
       //pipelineDefinition = parser.load(new File(pwd() + '/pipeline.yaml').text)
 	  pipelineDefinition = readYaml(file: "${WORKSPACE}/pipeline.yaml")
    
