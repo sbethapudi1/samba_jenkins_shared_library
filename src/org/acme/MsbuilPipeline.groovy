@@ -1,16 +1,26 @@
 #!/usr/bin/groovy
 package org.acme;
 
-Map pd = null
+def call() {
+  node {
+    stage('Checkout') {
+      checkout scm
+    }
+    def p = pipelineCfg()
 
-MsbuildPipeline(Map pipelineDefinition) {
-  // Create a globally accessible variable that makes
-  // the YAML pipeline definition available to all scripts
-  pd = pipelineDefinition
-}
+    if (p.runTests == true) {
+      docker.image(p.testImage).inside() {
+        stage('Test') {
+          sh 'pip install -r requirements.txt'
+          sh p.testCommand
+        }
+      }
+    }
 
-def executePipeline() {
-  
-}
-
-return this
+    if (env.BRANCH_NAME == 'master' && p.deployUponTestSuccess == true) {
+      docker.image(p.deployToolImage).inside {
+        stage('Deploy') {
+          sh "echo ${p.deployCommand} ${p.deployEnvironment}"
+        }
+      }
+    }
