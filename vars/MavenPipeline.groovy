@@ -1,5 +1,5 @@
 def call() {
-    node('java') {
+    node('master') {
 
         stage('Checkout') {
             checkout scm
