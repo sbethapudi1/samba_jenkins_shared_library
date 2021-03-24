@@ -1,7 +1,9 @@
 #!/usr/bin/groovy
 package org.acme;
 
-MsbuildPipeline(pipelineDefinition) {
+Map pd = null
+
+MsbuildPipeline(Map pipelineDefinition) {
   // Create a globally accessible variable that makes
   // the YAML pipeline definition available to all scripts
   pd = pipelineDefinition
