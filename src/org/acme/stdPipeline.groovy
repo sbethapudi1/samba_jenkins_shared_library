@@ -16,8 +16,9 @@ Map pipelineDefinition = null
 	  pipelineDefinition = readYaml(file: "${WORKSPACE}/pipeline.yaml")
    
 	
-	echo "parsed yaml:\\n " + pipelineDefinition
-
+	echo "parsed yaml: " + pipelineDefinition
+    echo "Pypilen Type: " + pipelineDefinition.pipelineType
+	
     switch(pipelineDefinition.pipelineType) {
 
       case 'python':
